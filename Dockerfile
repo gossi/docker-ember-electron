@@ -1,5 +1,7 @@
 FROM node:9
 
+RUN apt-get update && apt-get install -y apt-transport-https
+
 # WineHQ repo
 RUN curl -sS https://dl.winehq.org/wine-builds/Release.key | apt-key add -
 RUN echo "deb https://dl.winehq.org/wine-builds/debian/ jessie main" | tee /etc/apt/sources.list.d/winehq.list
